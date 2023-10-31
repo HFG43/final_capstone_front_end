@@ -1,5 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import store from './Redux/store';
+import { getExperiencesData } from './Redux/ExperiencesSlice/ExperiencesSlice';
+
+store.dispatch(getExperiencesData());
 
 function App() {
   return (
