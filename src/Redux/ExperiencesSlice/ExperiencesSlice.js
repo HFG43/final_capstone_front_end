@@ -1,27 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const getExperiencesUrl = 'https://jsonplaceholder.typicode.com/posts';
-const postExperienceUrl = 'xxxx';
+const getExperiencesUrl = 'TO BE DEFINED';
+const postExperienceUrl = 'TO BE DEFINED';
 
 const initialState = {
   experiences: [],
   status: 'idle',
   error: null,
-};
-
-const experiencesFetched = (experiences) => {
-  const experiencesList = experiences.map((experience) => ({
-    experience_id: experience.id,
-    experience_name: experience.name,
-    experience_photo: experience.photo,
-    experience_description: experience.description,
-    experience_fee: experience.experience_fee,
-    experience_testing_fee: experience.add_testing_fee,
-    experience_reserve_full_table: experience.reserve_full_table,
-    experience_guests: experience.guests,
-  }));
-  return experiencesList;
 };
 
 export const getExperiencesData = createAsyncThunk(
@@ -60,7 +46,7 @@ const experiencesSlice = createSlice({
       })
       .addCase(getExperiencesData.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.experiencesData = action.payload;
+        state.experiences = action.payload;
       })
       .addCase(getExperiencesData.rejected, (state, action) => {
         state.status = 'failed';
@@ -68,7 +54,7 @@ const experiencesSlice = createSlice({
       })
       .addCase(addNewExperience.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.error = action.error.message;
+        state.experiences.push(action.payload);
       });
   },
 });
