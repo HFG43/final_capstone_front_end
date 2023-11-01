@@ -1,7 +1,19 @@
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
+import { getExperiencesData } from './Redux/ExperiencesSlice/ExperiencesSlice';
 
 function App() {
+  const dispatch = useDispatch();
+  const status = useSelector((state) => state.experiences.status);
+
+  useEffect(() => {
+    if (status === 'idle') {
+      dispatch(getExperiencesData());
+    }
+  }, [dispatch, status]);
+
   return (
     <div className="App">
       <header className="App-header">
