@@ -21,18 +21,6 @@ export const getExperiencesData = createAsyncThunk(
   },
 );
 
-export const addNewExperience = createAsyncThunk(
-  'experiences/addNewExperience',
-  async (newExperience) => {
-    try {
-      const response = await axios.post(experiencesUrl, newExperience);
-      return response.data;
-    } catch (error) {
-      return error.message;
-    }
-  },
-);
-
 const experiencesSlice = createSlice({
   name: 'experiences',
   initialState,
@@ -49,10 +37,6 @@ const experiencesSlice = createSlice({
       .addCase(getExperiencesData.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
-      })
-      .addCase(addNewExperience.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.experiences.push(action.payload);
       });
   },
 });
