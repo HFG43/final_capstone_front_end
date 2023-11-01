@@ -23,7 +23,7 @@ export const getExperiencesData = createAsyncThunk(
 );
 
 export const addNewExperience = createAsyncThunk(
-  'experiences/addNewExperince',
+  'experiences/addNewExperience',
   async (newExperience) => {
     try {
       const response = await axios.post(postExperienceUrl, newExperience);
