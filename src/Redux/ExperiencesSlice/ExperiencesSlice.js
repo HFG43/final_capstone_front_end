@@ -1,8 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const getExperiencesUrl = 'TO BE DEFINED';
-const postExperienceUrl = 'TO BE DEFINED';
+const experiencesUrl = 'http://127.0.0.1:3000/api/v1/experiences';
 
 const initialState = {
   experiences: [],
@@ -14,7 +13,7 @@ export const getExperiencesData = createAsyncThunk(
   'experiences/getExperiencesData',
   async () => {
     try {
-      const response = await axios.get(getExperiencesUrl);
+      const response = await axios.get(experiencesUrl);
       return response.data;
     } catch (error) {
       return 'Please try again, something went wrong';
@@ -26,7 +25,7 @@ export const addNewExperience = createAsyncThunk(
   'experiences/addNewExperience',
   async (newExperience) => {
     try {
-      const response = await axios.post(postExperienceUrl, newExperience);
+      const response = await axios.post(experiencesUrl, newExperience);
       return response.data;
     } catch (error) {
       return error.message;
