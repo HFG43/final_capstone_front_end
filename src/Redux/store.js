@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { logger } from 'redux-logger';
-import usersReducer from './users/usersSlice';
-import experiencesReducer from './ExperiencesSlice/ExperiencesSlice';
+import usersReducer from './Slices/usersSlice';
+import experiencesReducer from './Slices/ExperiencesSlice';
 // import reservationsReducer from './ReservationsSlice/ReservationsSlice';
 
 const store = configureStore({

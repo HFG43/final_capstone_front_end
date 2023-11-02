@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import { getExperiencesData } from './Redux/ExperiencesSlice/ExperiencesSlice';
+import { getExperiencesData } from './Redux/Slices/ExperiencesSlice';
 import LoginPage from './Components/LoginPage';
 import MainPage from './Components/MainPage';
 
