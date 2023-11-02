@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const usersUrl = 'http://localhost:3000/api/v1/users';
+const usersUrl = 'http://localhost:3000/api/v1/users/';
 
 const initialState = {
   user: { id: null, name: null, username: null },
@@ -12,7 +12,7 @@ const initialState = {
 
 export const validateUser = createAsyncThunk('users/validateUser', async (name) => {
   try {
-    const response = await axios.get(`/${usersUrl}/${name}`);
+    const response = await axios.get(`${usersUrl}${name}`);
     return response.data;
   } catch (error) {
     return error.message;
