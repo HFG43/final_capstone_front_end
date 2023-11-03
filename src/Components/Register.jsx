@@ -39,7 +39,7 @@ const Register = () => {
           <input id="username" type="text" placeholder="Username" className="form-input" />
           <div className="btn-cont gap">
             <button type="submit" className="form-submit" onClick={(e) => CreateUser(e)}>Register</button>
-            <Link to="/"><button type="submit" className="form-submit">Log In</button></Link>
+            <Link to="/" className="form-submit d-flex-col">Log In</Link>
           </div>
         </form>
       </div>
