@@ -8,11 +8,17 @@
     gap: 30px;
   }
 
-  .form-input,
-  .form-submit {
+  .form-input {
     width: 280px;
     font-size: 17px;
     padding: 15px;
+  }
+
+
+  .form-submit {
+    width: 280px;
+    font-size: 17px;
+    padding: 15px 0;
   }
 
   .form-input::placeholder {

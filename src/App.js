@@ -4,6 +4,7 @@ import './App.css';
 import './Style/register.css';
 import './Style/medias.css';
 import { getExperiencesData } from './Redux/Slices/ExperiencesSlice';
+import { loadUserFromLocalStorage } from './Redux/Slices/usersSlice';
 
 function App() {
   const dispatch = useDispatch();
@@ -12,6 +13,8 @@ function App() {
   useEffect(() => {
     if (status === 'idle') {
       dispatch(getExperiencesData());
+      // Set user infromation from localStorage
+      dispatch(loadUserFromLocalStorage());
     }
   }, [dispatch, status]);
 
