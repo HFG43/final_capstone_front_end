@@ -1,0 +1,33 @@
+@media (min-width: 768px) {
+  .title-form {
+    font-size: 35px;
+    width: 350px;
+  }
+
+  .gap {
+    gap: 30px;
+  }
+
+  .form-input,
+  .form-submit {
+    width: 280px;
+    font-size: 17px;
+    padding: 15px;
+  }
+
+  .form-input::placeholder {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title-form {
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-cont {
+    width: 70%;
+  }
+}
