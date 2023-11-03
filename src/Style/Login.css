@@ -33,7 +33,17 @@
   outline: none;
 }
 
-.loginForm button {
+.btn-non {
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn,
+.loginForm a {
   width: 30%;
   height: 40px;
   margin-top: 15px;
@@ -44,4 +54,5 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  text-decoration: none;
 }

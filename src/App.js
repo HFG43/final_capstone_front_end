@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import './Style/register.css';
+import './Style/medias.css';
 import { getExperiencesData } from './Redux/Slices/ExperiencesSlice';
-import LoginPage from './Components/LoginPage';
-import MainPage from './Components/MainPage';
+import { loadUserFromLocalStorage } from './Redux/Slices/usersSlice';
 
 function App() {
   const dispatch = useDispatch();
@@ -13,16 +13,13 @@ function App() {
   useEffect(() => {
     if (status === 'idle') {
       dispatch(getExperiencesData());
+      // Set user infromation from localStorage
+      dispatch(loadUserFromLocalStorage());
     }
   }, [dispatch, status]);
 
   return (
-    <div className="Routes">
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/MainPage" element={<MainPage />} />
-      </Routes>
-    </div>
+    <div className="Routes" />
   );
 }
 

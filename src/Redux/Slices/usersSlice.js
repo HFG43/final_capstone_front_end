@@ -10,6 +10,21 @@ const initialState = {
   error: null,
 };
 
+const setLocalStorage = (userID, userName, userUsername) => {
+  const userData = { id: userID, name: userName, username: userUsername };
+  localStorage.setItem('user', JSON.stringify(userData));
+};
+
+const setUserState = (state, statusMessage = 'idle') => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (user !== null) {
+    state.status = statusMessage;
+    state.user = user;
+  } else {
+    state.status = statusMessage;
+  }
+};
+
 export const validateUser = createAsyncThunk('users/validateUser', async (name) => {
   try {
     const response = await axios.get(`${usersUrl}${name}`);
@@ -31,7 +46,11 @@ export const createUser = createAsyncThunk('users/createUser', async (user) => {
 const usersSlice = createSlice({
   name: 'users',
   initialState,
-  reducers: {},
+  reducers: {
+    loadUserFromLocalStorage: (state) => {
+      setUserState(state, 'Authenticated');
+    },
+  },
   extraReducers(builder) {
     builder
       .addCase(validateUser.pending, (state) => {
@@ -41,10 +60,8 @@ const usersSlice = createSlice({
         state.loading = false;
 
         if (action.payload.exist) {
-          state.status = 'Authenticated';
-          state.user.id = action.payload.id;
-          state.user.name = action.payload.name;
-          state.user.username = action.payload.username;
+          setLocalStorage(action.payload.id, action.payload.name, action.payload.username);
+          setUserState(state, 'Authenticated');
         } else {
           state.status = 'User not found';
         }
@@ -60,11 +77,13 @@ const usersSlice = createSlice({
       .addCase(createUser.fulfilled, (state, action) => {
         state.loading = false;
 
-        if (action.payload?.errors) {
+        if (typeof action.payload === 'string') {
           state.status = 'Failed to sign up';
+        } else {
+          state.status = 'created';
+          setLocalStorage(action.payload.id, action.payload.name, action.payload.username);
+          setUserState(state, 'created');
         }
-
-        state.status = 'created';
       })
       .addCase(createUser.rejected, (state, action) => {
         state.loading = false;
@@ -73,4 +92,5 @@ const usersSlice = createSlice({
   },
 });
 
+export const { loadUserFromLocalStorage } = usersSlice.actions;
 export default usersSlice.reducer;
