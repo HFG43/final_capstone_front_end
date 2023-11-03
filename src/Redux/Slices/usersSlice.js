@@ -60,11 +60,11 @@ const usersSlice = createSlice({
       .addCase(createUser.fulfilled, (state, action) => {
         state.loading = false;
 
-        if (action.payload?.errors) {
+        if (typeof action.payload === 'string') {
           state.status = 'Failed to sign up';
+        } else {
+          state.status = 'created';
         }
-
-        state.status = 'created';
       })
       .addCase(createUser.rejected, (state, action) => {
         state.loading = false;

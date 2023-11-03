@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { validateUser } from '../Redux/Slices/usersSlice';
 import '../Style/Login.css';
 
@@ -40,8 +40,8 @@ function LoginPage() {
           value={inputValue}
           onChange={InputChange}
         />
-        <button type="submit">Log In</button>
-        <button type="button">Register</button>
+        <button className="btn" type="submit">Log In</button>
+        <Link className="d-flex-col " to="./Register"><button className="btn-non" type="button">Register</button></Link>
       </form>
     </div>
   );
