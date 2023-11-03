@@ -15,11 +15,13 @@ const setLocalStorage = (userID, userName, userUsername) => {
   localStorage.setItem('user', JSON.stringify(userData));
 };
 
-const setUserState = (state, statusMessage) => {
+const setUserState = (state, statusMessage = 'idle') => {
   const user = JSON.parse(localStorage.getItem('user'));
   if (user !== null) {
     state.status = statusMessage;
     state.user = user;
+  } else {
+    state.status = statusMessage;
   }
 };
 
@@ -46,7 +48,7 @@ const usersSlice = createSlice({
   initialState,
   reducers: {
     loadUserFromLocalStorage: (state) => {
-      setUserState(state);
+      setUserState(state, 'Authenticated');
     },
   },
   extraReducers(builder) {

@@ -17,16 +17,21 @@ const Register = () => {
     const name = dataForm.querySelector('#name').value;
     const username = dataForm.querySelector('#username').value;
     const msg = dataForm.querySelector('#message-error');
-    const response = dispatch(createUser(user(name, username)));
 
-    response.then((data) => {
-      if (typeof data.payload !== 'object') {
-        msg.textContent = 'User already exist';
-      } else {
-        msg.textContent = '';
-        navigate('/MainPage');
-      }
-    });
+    if (name === '' || username === '') {
+      msg.textContent = 'Fill out all the fields please';
+    } else {
+      const response = dispatch(createUser(user(name, username)));
+
+      response.then((data) => {
+        if (typeof data.payload !== 'object') {
+          msg.textContent = 'User already exist';
+        } else {
+          msg.textContent = '';
+          navigate('/MainPage');
+        }
+      });
+    }
   };
 
   return (
@@ -35,8 +40,8 @@ const Register = () => {
         <h2 className="title-form">Register</h2>
         <form className="d-flex-col gap" onSubmit={(ev) => ev.preventDefault()}>
           <span id="message-error" />
-          <input id="name" type="text" placeholder="Name" className="form-input" />
-          <input id="username" type="text" placeholder="Username" className="form-input" />
+          <input id="name" type="text" placeholder="Name" className="form-input" required />
+          <input id="username" type="text" placeholder="Username" className="form-input" required />
           <div className="btn-cont gap">
             <button type="submit" className="form-submit" onClick={(e) => CreateUser(e)}>Register</button>
             <Link to="/" className="form-submit d-flex-col">Log In</Link>
