@@ -5,6 +5,11 @@
   justify-content: center;
 }
 
+.reserv-back {
+  background-color: #9dbf2096;
+  background-blend-mode: color-burn;
+}
+
 .image-back {
   width: 100vw;
   height: 100vh;
@@ -20,6 +25,10 @@
   font-size: 30px;
   width: 225px;
   text-align: center;
+}
+
+.title-reserv {
+  height: auto;
 }
 
 .form-cont {
@@ -39,6 +48,16 @@
   font-size: 15px;
 }
 
+.reserv-input {
+  background-color: transparent;
+  width: 220px;
+}
+
+.reserv-desc {
+  color: #fff;
+  font-size: 19px;
+}
+
 .form-submit {
   background-color: white;
   color: #9dbf20;
@@ -48,6 +67,7 @@
   border: none;
   width: 225px;
   font-size: 15px;
+  text-decoration: none;
 }
 
 .form-input::placeholder {
@@ -67,4 +87,8 @@
 #message-error {
   color: rgb(255, 255, 255);
   font-size: 20px;
+}
+
+.color {
+  color: #fff;
 }

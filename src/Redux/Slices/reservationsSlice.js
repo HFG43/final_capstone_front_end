@@ -4,7 +4,7 @@ import axios from 'axios';
 const baseURL = 'http://localhost:3000/api/v1/users';
 
 const initialState = {
-  reservations: [],
+  currentReservations: [],
   loading: false,
   error: null,
 };
@@ -47,7 +47,7 @@ const reservationsSlice = createSlice({
       })
       .addCase(getUserReservations.fulfilled, (state, action) => {
         state.loading = false;
-        state.reservations = action.payload;
+        state.currentReservations = action.payload;
       })
       .addCase(getUserReservations.rejected, (state, action) => {
         state.loading = false;
@@ -59,10 +59,10 @@ const reservationsSlice = createSlice({
       })
       .addCase(createReservation.fulfilled, (state, action) => {
         state.loading = false;
-        if (!action.payload?.errors) {
+        if (action.payload?.errors) {
           state.error = 'Failed to sign up';
         } else {
-          state.reservations.push(action.payload);
+          state.currentReservations.push(action.payload);
         }
       })
       .addCase(createReservation.rejected, (state, action) => {
@@ -75,7 +75,7 @@ const reservationsSlice = createSlice({
       })
       .addCase(deleteReservation.fulfilled, (state, action) => {
         state.loading = false;
-        state.reservations = state.reservations.filter(
+        state.currentReservations = state.currentReservations.filter(
           (reservation) => reservation.id !== action.payload.id,
         );
       })

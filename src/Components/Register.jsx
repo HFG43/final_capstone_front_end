@@ -1,11 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { createUser } from '../Redux/Slices/usersSlice';
-
-const user = (userName, nickname) => ({
-  name: userName,
-  username: nickname,
-});
+import user from '../logic/formatObjects';
 
 const Register = () => {
   const navigate = useNavigate();
