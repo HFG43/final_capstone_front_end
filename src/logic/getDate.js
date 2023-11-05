@@ -10,4 +10,17 @@ function CurrentDate() {
   return formattedDateTime;
 }
 
+export const dateFormat = (date) => {
+  const newDate = new Date(date);
+  const options = {
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  };
+  return newDate.toLocaleString('en-US', options);
+};
+
 export default CurrentDate;
