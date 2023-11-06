@@ -6,7 +6,6 @@ import { BsTwitter } from 'react-icons/bs';
 import { BiLogoFacebook } from 'react-icons/bi';
 import { LiaGoogle } from 'react-icons/lia';
 import '../Style/Main.css';
-import 'swiper/swiper-bundle.min.css';
 import 'swiper/css';
 
 register();
