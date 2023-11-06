@@ -1,0 +1,64 @@
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.m0 {
+  margin: 0;
+}
+
+.mt {
+  margin-top: 15px;
+}
+
+.mb {
+  padding-bottom: 15px;
+}
+
+.reserv-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+}
+
+.card-reserv-cont {
+  /* background-color: bisque; */
+  width: 95vw;
+  padding: 10px;
+}
+
+.reserv-card {
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 15px;
+  width: 350px;
+}
+
+.reserv-card:hover {
+  transform: scale(1.03);
+}
+
+.btn-cancel {
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(184, 5, 5);
+  color: #fff;
+  padding: 10px;
+}
+
+.btn-cancel:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 16px rgb(245, 19, 19);
+  transition: all 0.2s ease;
+}
+
+.non-reserve {
+  font-size: 20px;
+}
+
+.span-desc {
+  text-align: center;
+  width: auto;
+  height: auto;
+}

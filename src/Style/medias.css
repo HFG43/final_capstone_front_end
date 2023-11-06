@@ -1,7 +1,7 @@
 @media (min-width: 768px) {
   .title-form {
     font-size: 35px;
-    width: 350px;
+    width: auto;
   }
 
   .title-reserv {
@@ -36,6 +36,7 @@
 @media (min-width: 1024px) {
   .title-form {
     margin-bottom: 30px;
+    width: auto;
   }
 }
 

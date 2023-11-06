@@ -10,4 +10,12 @@ function CurrentDate() {
   return formattedDateTime;
 }
 
+export const dateFormat = (date) => {
+  const newDate = new Date(date);
+  const month = `${newDate.getMonth() + 1}`;
+  const day = `${newDate.getDate()}`;
+  const year = newDate.getFullYear();
+  return [year, month, day].join('/');
+};
+
 export default CurrentDate;

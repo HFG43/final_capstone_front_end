@@ -48,7 +48,7 @@ const ReservationForm = () => {
           {' '}
           {selectedExperience[0].name}
         </h2>
-        <span className="reserv-desc">{selectedExperience[0].description}</span>
+        <span className="d-flex reserv-desc span-desc">{selectedExperience[0].description}</span>
         <form className="d-flex-col gap" onSubmit={(ev) => ev.preventDefault()}>
           <span id="message-error" />
           <input id="city" type="text" placeholder="City" className="form-input reserv-input" required />

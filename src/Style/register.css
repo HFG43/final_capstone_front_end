@@ -20,20 +20,21 @@
 .title-form {
   margin: 0;
   height: 45px;
+  width: auto;
   border-bottom: 2px solid #9dc320;
   color: #9dc320;
   font-size: 30px;
-  width: 225px;
   text-align: center;
 }
 
 .title-reserv {
   height: auto;
+  width: auto;
 }
 
 .form-cont {
   width: 90vw;
-  height: 70vh;
+  height: 80vh;
   backdrop-filter: blur(30px);
 }
 
