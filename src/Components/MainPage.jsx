@@ -6,6 +6,7 @@ import { BsTwitter } from 'react-icons/bs';
 import { BiLogoFacebook } from 'react-icons/bi';
 import { LiaGoogle } from 'react-icons/lia';
 import '../Style/Main.css';
+import 'swiper/swiper-bundle.min.css';
 import 'swiper/css';
 
 register();
@@ -18,7 +19,7 @@ function MainPage() {
     <div className="mainContainer">
       <h1>{`Welcome ${DataUser.user.name}`}</h1>
       <p className="secondtitle">at the best experiences in the world</p>
-      <swiper-container slides-per-view="3" navigation="true">
+      <swiper-container slides-per-view="3" navigation="true" class="swiper-container">
         {DataExperiences.experiences.map((item) => (
           <swiper-slide key={item.id}>
             <Link className="cardlink" to={`./Register/${item.id}`}>

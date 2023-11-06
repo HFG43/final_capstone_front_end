@@ -1,60 +1,60 @@
 .mainContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mainContainer h1 {
-    width: 90%;
-    margin: 9rem 10px 15px 10px;
-    color: #9dc320;
-    font-size: 2rem;
-    text-align: center;
+  width: 90%;
+  margin: 9rem 10px 15px 10px;
+  color: #9dc320;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .secondtitle {
-    margin: 0 10px 15px 10px;
-    color: darkgrey;
-    font-size: 1.5rem;
-    text-align: center;
+  margin: 0 10px 15px 10px;
+  color: darkgrey;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .cardlink {
-    text-decoration: none;
-    color: #000;
+  text-decoration: none;
+  color: #000;
 }
 
 .card {
-    margin: 0 10px 0 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 0 10px 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card h2 {
-    color: #9dc320;
-    font-size: 1.5rem;
+  color: #9dc320;
+  font-size: 1.5rem;
 }
 
 .card img {
-    width: 40%;
-    height: auto;
+  width: 40%;
+  height: auto;
 }
 
 .card p {
-    margin: 15px 0 0 0;
+  margin: 15px 0 0 0;
 }
 
 .card svg {
-    margin-top: 5px;
-    color: darkgray;
+  margin-top: 5px;
+  color: darkgray;
 }
 
 .cardDesc {
-    color: darkgrey;
+  color: darkgrey;
 }
 
-swiper-container {
-    width: 90%;
-    height: 100%;
+.swiper-container {
+  width: 90%;
+  height: 100%;
 }
