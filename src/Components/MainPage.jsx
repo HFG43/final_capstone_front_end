@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import { register } from 'swiper/element/bundle';
 import { useSelector } from 'react-redux';
 import React from 'react';
+import { BsTwitter } from 'react-icons/bs';
+import { BiLogoFacebook } from 'react-icons/bi';
+import { LiaGoogle } from 'react-icons/lia';
 import '../Style/Main.css';
 import 'swiper/css';
 
@@ -24,7 +27,11 @@ function MainPage() {
                 <img src={item.image} alt="fotito" />
                 <p>Experience description:</p>
                 <p className="cardDesc">{item.description}</p>
-
+                <div>
+                  <BsTwitter />
+                  <BiLogoFacebook />
+                  <LiaGoogle />
+                </div>
               </div>
             </Link>
           </swiper-slide>
