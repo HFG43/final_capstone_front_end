@@ -12,15 +12,10 @@ function CurrentDate() {
 
 export const dateFormat = (date) => {
   const newDate = new Date(date);
-  const options = {
-    month: 'short',
-    day: '2-digit',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false,
-  };
-  return newDate.toLocaleString('en-US', options);
+  const month = `${newDate.getMonth() + 1}`;
+  const day = `${newDate.getDate()}`;
+  const year = newDate.getFullYear();
+  return [year, month, day].join('/');
 };
 
 export default CurrentDate;
