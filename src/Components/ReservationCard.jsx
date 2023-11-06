@@ -9,7 +9,7 @@ function ReservationCard({ reservArr }) {
     <div className="reserv-card d-flex-col gap">
       <img className="reserv-img" src={reservArr.image} alt={reservArr.experience_name} />
       <h3 className="m0">{reservArr.experience_name}</h3>
-      <span>{reservArr.experience_desc}</span>
+      <span className="d-flex span-desc">{reservArr.experience_desc}</span>
       <div className="d-flex gap">
         <span>{reservArr.city}</span>
         <span>{reservArr.date}</span>

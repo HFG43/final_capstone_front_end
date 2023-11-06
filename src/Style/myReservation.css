@@ -32,6 +32,7 @@
   border: 2px solid black;
   border-radius: 15px;
   padding: 15px;
+  width: 350px;
 }
 
 .reserv-card:hover {
@@ -54,4 +55,10 @@
 
 .non-reserve {
   font-size: 20px;
+}
+
+.span-desc {
+  text-align: center;
+  width: auto;
+  height: auto;
 }
