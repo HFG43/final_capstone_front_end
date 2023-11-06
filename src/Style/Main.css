@@ -18,3 +18,43 @@
     font-size: 1.5rem;
     text-align: center;
 }
+
+.cardlink {
+    text-decoration: none;
+    color: #000;
+}
+
+.card {
+    margin: 0 10px 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card h2 {
+    color: #9dc320;
+    font-size: 1.5rem;
+}
+
+.card img {
+    width: 40%;
+    height: auto;
+}
+
+.card p {
+    margin: 15px 0 0 0;
+}
+
+.card svg {
+    margin-top: 5px;
+    color: darkgray;
+}
+
+.cardDesc {
+    color: darkgrey;
+}
+
+swiper-container {
+    width: 90%;
+    height: 100%;
+}
