@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import './Style/register.css';
+import './Style/experienceDetails.css';
 import './Style/medias.css';
 import { loadUserFromLocalStorage } from './Redux/Slices/usersSlice';
 import LoginPage from './Components/LoginPage';
@@ -17,13 +18,12 @@ function App() {
 
   useEffect(() => {
     if (status === 'idle') {
-      // Set user infromation from localStorage
+      // Set user information from localStorage
       dispatch(loadUserFromLocalStorage());
     }
   }, [dispatch, status]);
 
   return (
-    // <div className="Routes" />
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
