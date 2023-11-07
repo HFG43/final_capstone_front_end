@@ -6,7 +6,6 @@ import {
 import './App.css';
 import './Style/register.css';
 import './Style/medias.css';
-import './Style/myReservation.css';
 import { loadUserFromLocalStorage } from './Redux/Slices/usersSlice';
 import LoginPage from './Components/LoginPage';
 import Register from './Components/Register';

@@ -1,9 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, Routes, Route } from 'react-router-dom';
-import '../App.css';
-import '../Style/register.css';
-import '../Style/medias.css';
 import '../Style/myReservation.css';
 import { getExperiencesData } from '../Redux/Slices/ExperiencesSlice';
 import { getUserReservations } from '../Redux/Slices/reservationsSlice';
@@ -21,7 +18,6 @@ function RoutesWrapper() {
 
   useEffect(() => {
     if (status === 'idle') {
-      // Set user infromation from localStorage
       dispatch(getExperiencesData());
     }
   }, [dispatch, status]);
@@ -37,7 +33,6 @@ function RoutesWrapper() {
   }
 
   return (
-    // <div className="Routes" />
     <Routes>
       <Route path="MainPage" element={<MainPage />} />
       <Route path="/experiences/:experienceID" element={<ExperienceCard />} />
