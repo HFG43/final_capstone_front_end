@@ -5,7 +5,7 @@ const usersUrl = 'http://localhost:3000/api/v1/users/';
 
 const initialState = {
   user: { id: null, name: null, username: null },
-  loading: false,
+  loading: null,
   status: 'idle',
   error: null,
 };
@@ -21,8 +21,10 @@ const setUserState = (state, statusMessage = 'idle') => {
     state.status = statusMessage;
     state.user = user;
   } else {
-    state.status = statusMessage;
+    state.status = 'idle';
+    state.user = { id: null, name: null, username: null };
   }
+  state.loading = 'succeeded';
 };
 
 export const validateUser = createAsyncThunk('users/validateUser', async (name) => {
@@ -54,11 +56,10 @@ const usersSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(validateUser.pending, (state) => {
-        state.loading = true;
+        state.loading = 'pending';
       })
       .addCase(validateUser.fulfilled, (state, action) => {
-        state.loading = false;
-
+        state.loading = 'succeeded';
         if (action.payload.exist) {
           setLocalStorage(action.payload.id, action.payload.name, action.payload.username);
           setUserState(state, 'Authenticated');
@@ -67,26 +68,24 @@ const usersSlice = createSlice({
         }
       })
       .addCase(validateUser.rejected, (state, action) => {
-        state.loading = false;
+        state.loading = 'failed';
         state.error = action.error.message;
       })
       // Create the user
       .addCase(createUser.pending, (state) => {
-        state.loading = true;
+        state.loading = 'pending';
       })
       .addCase(createUser.fulfilled, (state, action) => {
-        state.loading = false;
-
         if (typeof action.payload === 'string') {
           state.status = 'Failed to sign up';
         } else {
-          state.status = 'created';
           setLocalStorage(action.payload.id, action.payload.name, action.payload.username);
-          setUserState(state, 'created');
+          setUserState(state, 'Authenticated');
+          state.loading = 'succeeded';
         }
       })
       .addCase(createUser.rejected, (state, action) => {
-        state.loading = false;
+        state.loading = 'failed';
         state.error = action.error.message;
       });
   },
