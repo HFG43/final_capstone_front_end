@@ -38,10 +38,49 @@
     margin-bottom: 30px;
     width: auto;
   }
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  .experience-details {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 5rem 3rem 0 2rem;
+  }
+
+  .experience-image {
+    width: 70%;
+  }
+
+  .experience-content {
+    width: 30%;
+  }
+
+  .experience-extra-details {
+    padding: 0 2rem;
+  }
+
+  .experience-included {
+    width: 80%;
+  }
+
+  .footer-content {
+    padding-top: 3rem;
+  }
 }
 
 @media (min-width: 1200px) {
   .form-cont {
     width: 70%;
+  }
+
+  .experience-extra-details {
+    padding: 2rem;
   }
 }
