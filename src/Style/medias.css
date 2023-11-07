@@ -31,6 +31,14 @@
   .form-input::placeholder {
     font-size: 17px;
   }
+
+  .experience-details {
+    padding: 2rem 3rem 0 2rem;
+  }
+
+  .experience-image img {
+    max-width: 600px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -51,7 +59,6 @@
     flex-direction: row;
     align-items: flex-start;
     gap: 2rem;
-    padding: 5rem 3rem 0 2rem;
   }
 
   .experience-image {
@@ -82,5 +89,11 @@
 
   .experience-extra-details {
     padding: 2rem;
+  }
+}
+
+@media (min-width: 1378px) {
+  .experience-image img {
+    max-width: 700px;
   }
 }
