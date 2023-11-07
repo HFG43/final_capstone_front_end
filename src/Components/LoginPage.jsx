@@ -20,7 +20,7 @@ function LoginPage() {
     response.then((data) => {
       if (data.payload.exist) {
         setErrorMessage('');
-        navigate('/MainPage');
+        navigate('/');
       } else {
         setErrorMessage('User does not exist, please register');
       }
@@ -41,7 +41,7 @@ function LoginPage() {
           onChange={InputChange}
         />
         <button className="btn" type="submit">Log In</button>
-        <Link className="d-flex-col " to="./Register"><button className="btn-non" type="button">Register</button></Link>
+        <Link className="d-flex-col " to="/Register"><button className="btn-non" type="button">Register</button></Link>
       </form>
     </div>
   );
