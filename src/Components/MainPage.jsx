@@ -41,7 +41,7 @@ function MainPage() {
       <swiper-container slides-per-view={slidesPerView} navigation="true" class="swiper-container">
         {DataExperiences.experiences.map((item) => (
           <swiper-slide key={item.id}>
-            <Link className="cardlink" to={`./experiences/${item.id}`}>
+            <Link className="cardlink" to={`/experiences/${item.id}`}>
               <div className="card">
                 <h2>{item.name}</h2>
                 <img src={item.image} alt="ExperiencePicture" />
