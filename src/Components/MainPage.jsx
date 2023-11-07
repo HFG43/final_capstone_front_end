@@ -21,10 +21,10 @@ function MainPage() {
       <swiper-container slides-per-view="3" navigation="true" class="swiper-container">
         {DataExperiences.experiences.map((item) => (
           <swiper-slide key={item.id}>
-            <Link className="cardlink" to={`./Register/${item.id}`}>
+            <Link className="cardlink" to={`./experiences/${item.id}`}>
               <div className="card">
                 <h2>{item.name}</h2>
-                <img src={item.image} alt="fotito" />
+                <img src={item.image} alt="ExperiencePicture" />
                 <p>Experience description:</p>
                 <p className="cardDesc">{item.description}</p>
                 <div>

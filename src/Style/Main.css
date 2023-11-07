@@ -37,7 +37,8 @@
 }
 
 .card img {
-  width: 40%;
+  width: 50%;
+  border-radius: 15px;
   height: auto;
 }
 
