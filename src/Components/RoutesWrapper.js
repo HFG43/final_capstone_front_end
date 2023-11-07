@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, Routes, Route } from 'react-router-dom';
 import '../Style/myReservation.css';
@@ -7,7 +7,7 @@ import { getUserReservations } from '../Redux/Slices/reservationsSlice';
 import MainPage from './MainPage';
 import ReservationForm from './ReservationForm';
 import MyReservations from './MyReservations';
-import ExperienceCard from './ExperienceCard';
+import ExperienceDetails from './ExperienceDetails';
 
 function RoutesWrapper() {
   const dispatch = useDispatch();
@@ -15,29 +15,39 @@ function RoutesWrapper() {
   const status = useSelector((state) => state.experiences.status);
   const userStore = useSelector((state) => state.users);
 
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(getExperiencesData());
-    }
-  }, [dispatch, status]);
+  const [session, setSession] = useState(null);
+
+  if (userStore.loading === 'succeeded' && userStore.status !== 'Authenticated') {
+    navigate('/');
+  }
 
   useEffect(() => {
-    if (status === 'succeeded') {
-      dispatch(getUserReservations(userStore.user.id));
+    if (userStore.loading === 'succeeded' && userStore.status === 'Authenticated') {
+      setSession(true);
     }
-  }, [dispatch, status, userStore.user.id]);
+  }, [userStore]);
 
   useEffect(() => {
-    if (userStore.status !== 'Authenticated') {
-      navigate('/');
+    if (session) {
+      if (status === 'idle') {
+        dispatch(getExperiencesData());
+      }
     }
-  }, [navigate, userStore.status]);
+  }, [dispatch, session, status]);
+
+  useEffect(() => {
+    if (session) {
+      if (status === 'succeeded') {
+        dispatch(getUserReservations(userStore.user.id));
+      }
+    }
+  }, [dispatch, status, session, userStore.user.id]);
 
   return (
     <Routes>
       <Route path="/MainPage" element={<MainPage />} />
-      <Route path="/experiences/:experienceID" element={<ExperienceCard />} />
-      <Route path="/:experienceName/:experienceID" element={<ReservationForm />} />
+      <Route path="/experiences/:experienceID" element={<ExperienceDetails />} />
+      <Route path="/:experienceName/:experienceID/new-reservation" element={<ReservationForm />} />
       <Route path="/:userID/myReservations" element={<MyReservations />} />
     </Routes>
   );

@@ -1,0 +1,155 @@
+.w-100 {
+  width: 100%;
+}
+
+.experience-details {
+  padding: 2rem 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.experience-image {
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experience-content {
+  padding-top: 1.3rem;
+}
+
+.fluid-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.experience-image img {
+  border-radius: 1rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.experience-name {
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0.2rem 0;
+}
+
+.experience-desc {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0.2rem 0;
+}
+
+.experience-prices {
+  list-style: none;
+  padding: 1.6rem 0 0.5rem;
+}
+
+.experience-prices li {
+  list-style: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ebebeb;
+}
+
+.experience-prices li:nth-child(even) {
+  background-color: #fff;
+}
+
+.experience-offers {
+  font-size: 1.3rem;
+  padding: 1.3rem 1.5rem 0;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.reserve-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 4rem 0 1rem;
+}
+
+.btn-default {
+  background-color: #9dbf20;
+  color: #fff;
+  padding: 1rem 1.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn-reserve {
+  align-items: center;
+  border-radius: 2.5rem;
+  gap: 2rem;
+}
+
+.btn-back {
+  display: flex;
+  width: 2.5rem;
+  border-top-right-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+  box-sizing: content-box;
+}
+
+.btn-default:hover {
+  background-color: #7ea100;
+}
+
+.btn-reserve:hover {
+  scale: 1.05;
+}
+
+.btn-default svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.experience-extra-details {
+  padding: 0 1rem;
+}
+
+.experience-included {
+  font-size: 1.1rem;
+  font-weight: 400;
+  width: 100%;
+  line-height: 1.5;
+}
+
+.experience-extra-details-title {
+  font-size: 1.2rem;
+  color: #9dbf20;
+  font-weight: 700;
+}
+
+.footer-content {
+  padding-top: 0;
+}
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
