@@ -25,7 +25,7 @@ function RoutesWrapper() {
     if (status === 'succeeded') {
       dispatch(getUserReservations(userStore.user.id));
     }
-  }, [dispatch, status]);
+  }, [dispatch, status, userStore.user.id]);
 
   useEffect(() => {
     if (userStore.status === 'Authenticated') {
