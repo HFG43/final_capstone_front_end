@@ -13,8 +13,7 @@ function RoutesWrapper() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const status = useSelector((state) => state.experiences.status);
-  const userStatus = useSelector((state) => state.users.status);
-  const { id } = useSelector((state) => state.users.user);
+  const userStore = useSelector((state) => state.users);
 
   useEffect(() => {
     if (status === 'idle') {
@@ -24,13 +23,15 @@ function RoutesWrapper() {
 
   useEffect(() => {
     if (status === 'succeeded') {
-      dispatch(getUserReservations(id));
+      dispatch(getUserReservations(userStore.user.id));
     }
-  });
+  }, [dispatch, status]);
 
-  if (userStatus === 'Authenticated') {
-    navigate('/login');
-  }
+  useEffect(() => {
+    if (userStore.status === 'Authenticated') {
+      navigate('/MainPage');
+    }
+  }, [navigate, userStore.status]);
 
   return (
     <Routes>
