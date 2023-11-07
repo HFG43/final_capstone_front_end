@@ -34,7 +34,7 @@ function RoutesWrapper() {
 
   return (
     <Routes>
-      <Route path="MainPage" element={<MainPage />} />
+      <Route path="/MainPage" element={<MainPage />} />
       <Route path="/experiences/:experienceID" element={<ExperienceCard />} />
       <Route path="/:experienceName/:experienceID" element={<ReservationForm />} />
       <Route path="/:userID/myReservations" element={<MyReservations />} />

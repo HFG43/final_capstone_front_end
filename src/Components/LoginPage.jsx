@@ -20,7 +20,7 @@ function LoginPage() {
     response.then((data) => {
       if (data.payload.exist) {
         setErrorMessage('');
-        navigate('/');
+        navigate('/MainPage');
       } else {
         setErrorMessage('User does not exist, please register');
       }
