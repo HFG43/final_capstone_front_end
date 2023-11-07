@@ -28,8 +28,8 @@ function RoutesWrapper() {
   }, [dispatch, status, userStore.user.id]);
 
   useEffect(() => {
-    if (userStore.status === 'Authenticated') {
-      navigate('/MainPage');
+    if (userStore.status !== 'Authenticated') {
+      navigate('/');
     }
   }, [navigate, userStore.status]);
 
