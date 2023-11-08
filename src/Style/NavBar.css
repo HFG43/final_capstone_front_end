@@ -1,0 +1,121 @@
+#root {
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+}
+
+.hamburger-icon {
+  display: none; /* Oculta el botón de hamburguesa por defecto */
+}
+
+.navbar img {
+  width: auto;
+  height: auto;
+}
+
+.btn-nav {
+  all: unset;
+  cursor: pointer;
+  margin: 10px;
+  padding: 15px 10%;
+  background-color: #fff;
+  color: #000;
+  font-size: 0.9rem;
+  font-style: italic;
+  transition: background-color 0.3s;
+}
+
+.navbar button:hover {
+  color: red;
+}
+
+.btn-nav:hover {
+  background-color: #9dc320b7;
+}
+
+footer {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 15%;
+  margin-top: 20px;
+}
+
+footer svg {
+  width: 32px;
+  height: auto;
+}
+
+@media (max-width: 800px) {
+  #root {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+  .hamburger-icon {
+    all: unset;
+    display: block;
+    margin: 25px;
+    font-size: 2rem;
+    color: #9dc320;
+  }
+
+  .navbar {
+    width: 25%;
+    height: 100vh;
+    position: fixed;
+    align-items: center;
+    background-color: lightgray;
+    z-index: 999;
+  }
+
+  .navbar img {
+    width: 150px;
+    height: auto;
+  }
+
+  .btn-nav {
+    background-color: transparent;
+  }
+
+  footer {
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 15%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    width: 30%;
+    height: 100vh;
+    position: fixed;
+    align-items: center;
+    font-size: 0.7rem;
+    background-color: lightgray;
+    z-index: 999;
+  }
+
+  .navbar img {
+    width: 95px;
+    height: auto;
+  }
+
+  .btn-nav {
+    background-color: transparent;
+  }
+
+  footer {
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 15%;
+    margin-top: 20px;
+  }
+}
