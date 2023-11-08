@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import CurrentDate from '../logic/getDate';
 import { reservation } from '../logic/formatObjects';
 import { createReservation } from '../Redux/Slices/reservationsSlice';
@@ -54,7 +54,6 @@ const ReservationForm = () => {
           <input id="city" type="text" placeholder="City" className="form-input reserv-input" required />
           <input id="date" type="datetime-local" min={CurrentDate()} max="2023-12-31 18:00" className="form-input reserv-input" required />
           <input type="submit" className="form-submit d-flex-col" onClick={(e) => CreateReservation(e)} value="Register" />
-          <Link to="/MainPage" className="form-submit d-flex-col">Main page</Link>
         </form>
       </div>
     </section>
