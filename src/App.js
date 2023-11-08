@@ -23,7 +23,7 @@ function App() {
   }, [dispatch, status]);
 
   const location = useLocation();
-  const RenderNavbar = location.pathname !== '/login' && location.pathname !== '/Register';
+  const RenderNavbar = location.pathname !== '/login' && location.pathname !== '/Register' && location.pathname !== '/';
 
   return (
     <>
