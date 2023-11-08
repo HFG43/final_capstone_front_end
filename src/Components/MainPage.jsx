@@ -37,7 +37,7 @@ function MainPage() {
   return (
     <div className="mainContainer">
       <h1>{`Welcome ${DataUser.user.name}`}</h1>
-      <p className="secondtitle">at the best experiences in the world</p>
+      <p className="secondtitle">at the best gourmet experiences in the world</p>
       <swiper-container slides-per-view={slidesPerView} navigation="true" class="swiper-container">
         {DataExperiences.experiences.map((item) => (
           <swiper-slide key={item.id}>
