@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { BiChevronRightCircle, BiChevronLeftCircle, BiGift } from 'react-icons/bi';
+import { BiChevronRightCircle, BiGift } from 'react-icons/bi';
 import ExperienceIncluded from './ExperienceIncluded';
 import getRandomDiscount from '../logic/utils';
 
@@ -85,12 +85,6 @@ function ExperienceDetails() {
             </Link>
           </div>
         </div>
-      </div>
-
-      <div className="footer-content">
-        <Link to="/MainPage" className="btn-default btn-back">
-          <BiChevronLeftCircle />
-        </Link>
       </div>
     </div>
   );

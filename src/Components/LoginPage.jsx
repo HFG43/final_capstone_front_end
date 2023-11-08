@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { validateUser } from '../Redux/Slices/usersSlice';
 import '../Style/Login.css';
+import logo from '../img/logo.jpg';
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -29,8 +30,9 @@ function LoginPage() {
 
   return (
     <div className="loginPage">
-      <h1>Welcome to the best experiences app</h1>
-      <h3>What are you waiting???, some experiences are waiting for you</h3>
+      <h1>Welcome to the best gourmet experiences app</h1>
+      <img src={logo} alt="logo" />
+      <h3>What are you waiting for??? A lot of experiences are waiting for you</h3>
       <form className="loginForm" onSubmit={tryLogin}>
         {errorMessage && <div className="error-message">{errorMessage}</div>}
         <input
