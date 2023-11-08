@@ -1,9 +1,8 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  Navigate, BrowserRouter, Routes, Route,
+  Routes, Route, useLocation, Navigate,
 } from 'react-router-dom';
-import './App.css';
 import './Style/register.css';
 import './Style/experienceDetails.css';
 import './Style/medias.css';
@@ -11,6 +10,7 @@ import { loadUserFromLocalStorage } from './Redux/Slices/usersSlice';
 import LoginPage from './Components/LoginPage';
 import Register from './Components/Register';
 import RoutesWrapper from './Components/RoutesWrapper';
+import Navbar from './Components/NavBar';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,20 +18,23 @@ function App() {
 
   useEffect(() => {
     if (status === 'idle') {
-      // Set user information from localStorage
       dispatch(loadUserFromLocalStorage());
     }
   }, [dispatch, status]);
 
+  const location = useLocation();
+  const RenderNavbar = location.pathname !== '/login' && location.pathname !== '/Register';
+
   return (
-    <BrowserRouter>
+    <>
+      <Navbar shouldRender={RenderNavbar} />
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/*" element={<RoutesWrapper />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 
