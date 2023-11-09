@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import '../Style/myReservation.css';
 import { getExperiencesData } from '../Redux/Slices/ExperiencesSlice';
 import { getUserReservations } from '../Redux/Slices/reservationsSlice';
@@ -11,16 +11,15 @@ import ExperienceDetails from './ExperienceDetails';
 import AddExperience from './AddExperience';
 import DeleteExperience from './DeleteExperience';
 
-function RoutesWrapper() {
+const RoutesWrapper = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const status = useSelector((state) => state.experiences.status);
   const userStore = useSelector((state) => state.users);
 
   const [session, setSession] = useState(null);
 
   if (userStore.loading === 'succeeded' && userStore.status !== 'Authenticated') {
-    navigate('/');
+    window.location.href = '/login';
   }
 
   useEffect(() => {
@@ -55,6 +54,6 @@ function RoutesWrapper() {
       <Route path="/:userID/myReservations" element={<MyReservations />} />
     </Routes>
   );
-}
+};
 
 export default RoutesWrapper;
