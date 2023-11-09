@@ -8,6 +8,7 @@ import MainPage from './MainPage';
 import ReservationForm from './ReservationForm';
 import MyReservations from './MyReservations';
 import ExperienceDetails from './ExperienceDetails';
+import AddExperience from './AddExperience';
 
 function RoutesWrapper() {
   const dispatch = useDispatch();
@@ -46,6 +47,7 @@ function RoutesWrapper() {
   return (
     <Routes>
       <Route path="/MainPage" element={<MainPage />} />
+      <Route path="/experiences/new" element={<AddExperience />} />
       <Route path="/experiences/:experienceID" element={<ExperienceDetails />} />
       <Route path="/:experienceName/:experienceID/new-reservation" element={<ReservationForm />} />
       <Route path="/:userID/myReservations" element={<MyReservations />} />
