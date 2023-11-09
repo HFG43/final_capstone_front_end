@@ -10,13 +10,13 @@ export const experience = (
   reserveFullTable, guests, experienceImage,
 ) => ({
   name: experienceName,
-  details: experienceDetails,
   description,
   experience_fee: experienceFee,
   add_testing_fee: addTestingFee,
   reserve_full_table: reserveFullTable,
   guests,
   image: experienceImage,
+  details: experienceDetails,
 });
 
 export const reservation = (userID, experienceID, reserveDate, reserveCity) => ({
