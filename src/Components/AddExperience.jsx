@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { experience } from '../logic/formatObjects';
 import { createExperience } from '../Redux/Slices/ExperiencesSlice';
 
-function AddExperience() {
+const AddExperience = () => {
   const dispatch = useDispatch();
 
   const CreateExperience = (e) => {
@@ -16,14 +16,14 @@ function AddExperience() {
     const reserveFullTable = dataForm.querySelector('#fulltable');
     const guests = dataForm.querySelector('#guests');
     const experienceImage = dataForm.querySelector('#image');
-    const msg = dataForm.querySelector('#message-error');
+    const msg = dataForm.parentElement.querySelector('#message-error');
 
     if (name.value === '' || description.value === '' || experienceDetails.value === '' || experienceFee.value === '' || addTestingFee.value === '' || reserveFullTable.value === '' || guests.value === '' || experienceImage.value === '') {
       msg.textContent = 'Fill out all the fields please';
     } else {
       const response = dispatch(createExperience(
         experience(
-          name.value, description.value, experienceDetails.value, experienceFee.value,
+          name.value, experienceDetails.value, description.value, experienceFee.value,
           addTestingFee.value, reserveFullTable.value, guests.value, experienceImage.value,
         ),
       ));
@@ -56,10 +56,10 @@ function AddExperience() {
             <input id="name" type="text" placeholder="Experience Name" className="form-input reserv-input" required />
             <input id="description" type="text" placeholder="Describe the Experience" className="form-input reserv-input" required />
             <textarea id="details" placeholder="Additional Experience Details" className="form-input reserv-input" required />
-            <input id="expfee" type="number" placeholder="Experience Fee" className="form-input reserv-input" required min="0" step="1" />
-            <input id="testing" type="number" placeholder="Additional Testing Fee" className="form-input reserv-input" required min="0" step="1" />
-            <input id="fulltable" type="number" placeholder="Additional Full Table Fee" className="form-input reserv-input" required min="0" step="1" />
-            <input id="guests" type="number" placeholder="Guests included in Experience" className="form-input reserv-input" required min="0" step="1" />
+            <input id="expfee" type="number" placeholder="Experience Fee" className="form-input reserv-input" required min="0.01" step="0.01" />
+            <input id="testing" type="number" placeholder="Additional Testing Fee" className="form-input reserv-input" required min="0.01" step="0.01" />
+            <input id="fulltable" type="number" placeholder="Additional Full Table Fee" className="form-input reserv-input" required min="0.01" step="0.01" />
+            <input id="guests" type="number" placeholder="Guests included in Experience" className="form-input reserv-input" required min="1" step="1" />
             <input id="image" type="text" placeholder="Add an Experience image" className="form-input reserv-input" required />
           </div>
           <input type="submit" className="form-submit register_but_exp" onClick={(e) => CreateExperience(e)} value="Register" />
@@ -67,6 +67,6 @@ function AddExperience() {
       </div>
     </section>
   );
-}
+};
 
 export default AddExperience;
