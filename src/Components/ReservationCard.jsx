@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { deleteReservation } from '../Redux/Slices/reservationsSlice';
 import { cancelReservation } from '../logic/formatObjects';
 
-function ReservationCard({ reservArr }) {
+const ReservationCard = ({ reservArr }) => {
   const dispatch = useDispatch();
   return (
     <div className="reserv-card d-flex-col gap">
@@ -17,7 +17,7 @@ function ReservationCard({ reservArr }) {
       <button className="btn-cancel" type="button" onClick={() => dispatch(deleteReservation(cancelReservation(reservArr.user_id, reservArr.reserve_id)))}>Cancel reservation</button>
     </div>
   );
-}
+};
 
 ReservationCard.propTypes = {
   reservArr: PropTypes.shape({

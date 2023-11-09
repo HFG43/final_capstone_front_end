@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteExperience } from '../Redux/Slices/experiencesSlice';
+import { deleteExperience } from '../Redux/Slices/ExperiencesSlice';
 
-function DeleteExperience() {
+const DeleteExperience = () => {
   const dispatch = useDispatch();
   const { experiences } = useSelector((state) => state.experiences);
 
@@ -31,6 +31,6 @@ function DeleteExperience() {
       <span className="non-reserve mt">No experiences added yet</span>
     </section>
   );
-}
+};
 
 export default DeleteExperience;

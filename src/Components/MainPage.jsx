@@ -10,14 +10,14 @@ import 'swiper/css';
 
 register();
 
-function MainPage() {
+const MainPage = () => {
   const DataUser = useSelector((state) => state.users);
   const DataExperiences = useSelector((state) => state.experiences);
 
   const [slidesPerView, setSlidesPerView] = useState(3);
 
   useEffect(() => {
-    function handleResize() {
+    const handleResize = () => {
       if (window.innerWidth <= 600) {
         setSlidesPerView(1);
       } else if (window.innerWidth <= 900) {
@@ -25,7 +25,7 @@ function MainPage() {
       } else {
         setSlidesPerView(3);
       }
-    }
+    };
 
     window.addEventListener('resize', handleResize);
 
@@ -59,6 +59,6 @@ function MainPage() {
       </swiper-container>
     </div>
   );
-}
+};
 
 export default MainPage;
