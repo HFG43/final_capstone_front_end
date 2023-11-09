@@ -5,13 +5,16 @@ const user = (userName, nickname) => ({
   username: nickname,
 });
 
-export const experience =  (experienceName, description, experienceFee, addTestingFee, reserveFullTable, guests, experienceImage) => ({
+export const experience = (
+  experienceName, description, experienceFee, addTestingFee,
+  reserveFullTable, guests, experienceImage,
+) => ({
   name: experienceName,
-  description: description,
+  description,
   experience_fee: experienceFee,
   add_testing_fee: addTestingFee,
   reserve_full_table: reserveFullTable,
-  guests: guests,
+  guests,
   image: experienceImage,
 });
 
