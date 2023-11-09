@@ -48,7 +48,6 @@ function AddExperience() {
     <section className="image-back d-flex-col reserv-back">
       <div className="d-flex-col form-cont gap">
         <h2 className="title-form title-reserv color">Add a new experince</h2>
-        <span className="d-flex reserv-desc span-desc">TESTEO</span>
         <form className="d-flex-col gap" onSubmit={(ev) => ev.preventDefault()}>
           <span id="message-error" />
           <input id="name" type="text" placeholder="Experience Name" className="form-input reserv-input" required />

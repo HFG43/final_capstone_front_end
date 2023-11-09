@@ -21,6 +21,11 @@ export const getExperiencesData = createAsyncThunk(
   },
 );
 
+// CREADA PARA TESTEAR EL FEATURE
+export const createExperience = () => {
+  console.log('Tests');
+};
+
 const experiencesSlice = createSlice({
   name: 'experiences',
   initialState,
