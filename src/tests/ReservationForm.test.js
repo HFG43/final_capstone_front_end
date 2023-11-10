@@ -5,8 +5,8 @@ import store from '../assets/helpers/mockStore';
 import ReservationForm from '../Components/ReservationForm';
 
 jest.mock('../logic/getDate', () => ({
-    __esModule: true,
-    default: jest.fn(() => '2023-11-09T23:03:00.000Z'),
+  __esModule: true,
+  default: jest.fn(() => '2023-11-09T23:03:00.000Z'),
 }));
 
 test('RESERVATION FORM', () => {

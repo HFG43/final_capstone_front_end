@@ -28,13 +28,13 @@ export const reservationsData = [
   {
     userID: 1,
     experienceID: 1,
-    reserveDate: 2023-12-12,
+    reserveDate: 2023 - 12 - 12,
     reserveCity: 'Cancun',
   },
   {
     userID: 1,
     experienceID: 2,
-    reserveDate: 2023-12-25,
+    reserveDate: 2023 - 12 - 25,
     reserveCity: 'Caracas',
   },
 ];
@@ -67,18 +67,18 @@ export const experiencesFetchMockData = [
     reserveFullTable: 40,
     guests: 20,
     experienceImage: 'https://i.postimg.cc/bNX1CZRC/casa-coeli.jpg',
-  },  
+  },
 ];
 
 export const reservationsFetchMockData = [
   {
-    reserveDate: 2023-12-12,
+    reserveDate: 2023 - 12 - 12,
     reserveCity: 'Cancun',
   },
   {
-    reserveDate: 2023-12-25,
+    reserveDate: 2023 - 12 - 25,
     reserveCity: 'Caracas',
-  },  
+  },
 ];
 
 export const usersFetchMockData = [
@@ -105,7 +105,7 @@ const store = mockStore({
     loading: null,
     status: 'idle',
     error: null,
-  }
+  },
 });
 
 export const usersMockData = {
@@ -130,20 +130,20 @@ export const reservationsMockData = {
 export default store;
 
 export const initialStore = mockStore({
-  experiences: { 
-    experiences: [], 
-    status: 'idle', 
-    error: null 
+  experiences: {
+    experiences: [],
+    status: 'idle',
+    error: null,
   },
   reservations: {
-    currentReservations: [], 
-    loading: false, 
-    error: null 
+    currentReservations: [],
+    loading: false,
+    error: null,
   },
   users: {
     user: { id: null, name: null, username: null },
     loading: null,
     status: 'idle',
-    error: null
-  }
+    error: null,
+  },
 });
