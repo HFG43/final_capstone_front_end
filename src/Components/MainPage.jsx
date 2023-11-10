@@ -40,7 +40,7 @@ const MainPage = () => {
       <p className="secondtitle">at the best gourmet experiences in the world</p>
       <swiper-container slides-per-view={slidesPerView} navigation="true" class="swiper-container">
         {DataExperiences.experiences.map((item) => (
-          <swiper-slide key={item.id}>
+          <swiper-slide key={getRandomDiscount({ start: 1, end: 1000 })}>
             <Link className="cardlink" to={`/experiences/${item.id}`}>
               <div className="card">
                 <h2>{item.name}</h2>
