@@ -8,10 +8,12 @@
 
 - [📗 Table of Contents](#-table-of-contents)
 - [Final Capstone Front-End | Gourmet Experience App](#final-capstone-front-end--gourmet-experience-app)
+  - [Kanban Board ](#-kanban-board-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [🚀 Back-End Project  ](#-back-end-project--)
+    - [ Live Demo](#live-demo)
+  - [🚀 Back-End Project  ](#-back-end-project--)  
   - [💻 Getting Started ](#-getting-started-)
     - [Setup](#setup)
     - [Prerequisites](#prerequisites)
@@ -32,6 +34,15 @@ This project consists of a web application built with ReactJS and Redux Toolkit 
 
 This application connects to the [GourmetExperience API](https://github.com/HFG43/final_capstone_back_end) and obtains all the information of registered users, the list of available gastronomic experiences, the list of reservations made by a selected user, and allows new users to be registered, authenticate existing users, create new reservations and delete them. Likewise, the app is completely responsive and has been built following the best practices of software development. It has robust validations, efficient data management, and a set of unit and integration tests that allowed validating the operation of the entire application.
 
+## Kanban Board <a name="built-with"></a>
+
+[Current Statuss](https://github.com/users/HFG43/projects/9/views/1)
+
+
+[Previous Status](https://github.com/HFG43/final_capstone_back_end/issues/12)
+
+- **We are a Group of 4 Members**
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -49,6 +60,12 @@ This application connects to the [GourmetExperience API](https://github.com/HFG4
     <li><a href="https://axios-http.com/docs/intro">Axios</a></li>
   </ul>
 </details>
+
+## Live Demo  <a name="live-demo"></a>
+
+[Live Demo Link](https://gourmet-experiences-app.onrender.com)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Key Features <a name="key-features"></a>
 
