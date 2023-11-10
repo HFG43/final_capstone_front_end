@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const experiencesUrl = 'http://127.0.0.1:3000/api/v1/experiences';
+const experiencesUrl = 'https://gourmet-experiences.onrender.com/api/v1/experiences';
 
 const initialState = {
   experiences: [],

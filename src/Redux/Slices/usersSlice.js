@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const usersUrl = 'http://localhost:3000/api/v1/users/';
+const usersUrl = 'https://gourmet-experiences.onrender.com/api/v1/users/';
 
 const initialState = {
   user: { id: null, name: null, username: null },
