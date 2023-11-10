@@ -5,7 +5,7 @@ import { validateUser } from '../Redux/Slices/usersSlice';
 import '../Style/Login.css';
 import logo from '../img/logo.jpg';
 
-function LoginPage() {
+const LoginPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState('');
@@ -47,6 +47,6 @@ function LoginPage() {
       </form>
     </div>
   );
-}
+};
 
 export default LoginPage;

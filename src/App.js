@@ -12,7 +12,7 @@ import Register from './Components/Register';
 import RoutesWrapper from './Components/RoutesWrapper';
 import Navbar from './Components/NavBar';
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
   const status = useSelector((state) => state.experiences.status);
 
@@ -36,6 +36,6 @@ function App() {
       </Routes>
     </>
   );
-}
+};
 
 export default App;

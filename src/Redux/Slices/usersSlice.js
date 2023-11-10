@@ -52,6 +52,14 @@ const usersSlice = createSlice({
     loadUserFromLocalStorage: (state) => {
       setUserState(state, 'Authenticated');
     },
+    resetUserState: (state) => {
+      state.user = { id: null, name: null, username: null };
+      state.loading = null;
+      state.status = 'idle';
+      state.error = null;
+
+      localStorage.removeItem('user');
+    },
   },
   extraReducers(builder) {
     builder
@@ -91,5 +99,5 @@ const usersSlice = createSlice({
   },
 });
 
-export const { loadUserFromLocalStorage } = usersSlice.actions;
+export const { loadUserFromLocalStorage, resetUserState } = usersSlice.actions;
 export default usersSlice.reducer;

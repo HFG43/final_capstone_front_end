@@ -5,13 +5,31 @@
   justify-content: center;
 }
 
+.d-flex-col-exp {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.form_exp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .reserv-back {
   background-color: #9dbf2096;
   background-blend-mode: color-burn;
 }
 
+.register_but_exp {
+  display: inline-block;
+  justify-content: center;
+  margin-top: 15px;
+}
+
 .image-back {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-image: url('../img/back.webp');
   background-size: 100% 100%;
@@ -33,8 +51,8 @@
 }
 
 .form-cont {
-  width: 90vw;
-  height: 80vh;
+  width: 90%;
+  height: 80%;
   backdrop-filter: blur(30px);
 }
 
@@ -92,4 +110,11 @@
 
 .color {
   color: #fff;
+}
+
+@media (min-width: 500px) {
+  .d-flex-col-exp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }

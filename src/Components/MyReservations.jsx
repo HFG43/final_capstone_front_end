@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import ReservationCard from './ReservationCard';
 import { myReservationInfo } from '../logic/formatObjects';
 
-function MyReservations() {
+const MyReservations = () => {
   const urldata = useParams();
   const { currentReservations } = useSelector((state) => state.reservations);
   const { experiences } = useSelector((state) => state.experiences);
@@ -34,6 +34,6 @@ function MyReservations() {
       <span className="non-reserve mt">No reservations yet</span>
     </section>
   );
-}
+};
 
 export default MyReservations;

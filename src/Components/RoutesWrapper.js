@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import '../Style/myReservation.css';
 import { getExperiencesData } from '../Redux/Slices/ExperiencesSlice';
 import { getUserReservations } from '../Redux/Slices/reservationsSlice';
@@ -8,17 +8,18 @@ import MainPage from './MainPage';
 import ReservationForm from './ReservationForm';
 import MyReservations from './MyReservations';
 import ExperienceDetails from './ExperienceDetails';
+import AddExperience from './AddExperience';
+import DeleteExperience from './DeleteExperience';
 
-function RoutesWrapper() {
+const RoutesWrapper = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const status = useSelector((state) => state.experiences.status);
   const userStore = useSelector((state) => state.users);
 
   const [session, setSession] = useState(null);
 
   if (userStore.loading === 'succeeded' && userStore.status !== 'Authenticated') {
-    navigate('/');
+    window.location.href = '/login';
   }
 
   useEffect(() => {
@@ -46,11 +47,13 @@ function RoutesWrapper() {
   return (
     <Routes>
       <Route path="/MainPage" element={<MainPage />} />
+      <Route path="/experiences/new" element={<AddExperience />} />
+      <Route path="/experiences/delete" element={<DeleteExperience />} />
       <Route path="/experiences/:experienceID" element={<ExperienceDetails />} />
       <Route path="/:experienceName/:experienceID/new-reservation" element={<ReservationForm />} />
       <Route path="/:userID/myReservations" element={<MyReservations />} />
     </Routes>
   );
-}
+};
 
 export default RoutesWrapper;

@@ -5,19 +5,13 @@ import { BiChevronRightCircle, BiGift } from 'react-icons/bi';
 import ExperienceIncluded from './ExperienceIncluded';
 import getRandomDiscount from '../logic/utils';
 
-function ExperienceDetails() {
+const ExperienceDetails = () => {
   const { experienceID } = useParams();
-
   const [discount] = useState(getRandomDiscount({ start: 5, end: 50 }));
-
   const { experiences } = useSelector((state) => state.experiences);
-
   const selectedExperience = experiences.find((exp) => exp.id === parseInt(experienceID, 10));
-
   const experienceSlug = selectedExperience?.name.replace(/\s/g, '-').toLowerCase();
-
   const experienceReservationURL = `/${experienceSlug}/${experienceID}/new-reservation`;
-
   const detailsIncluded = selectedExperience?.details === undefined ? '' : selectedExperience?.details;
 
   return (
@@ -88,6 +82,6 @@ function ExperienceDetails() {
       </div>
     </div>
   );
-}
+};
 
 export default ExperienceDetails;
